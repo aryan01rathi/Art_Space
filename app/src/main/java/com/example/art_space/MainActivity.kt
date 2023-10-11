@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 
 
@@ -14,6 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -35,8 +39,14 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun LayoutBasic(modifier:Modifier=Modifier){
+    val backgroundGradient = Brush.linearGradient(
+        colors = listOf(Color(0xFF7D7C7C), Color(0xFFB4B4B3)),
+        start = Offset(100f, 300f),
+        end = Offset(100f, 900f)
+    )
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize()
+            .background(brush=backgroundGradient),
         contentAlignment = Alignment.Center
     )
     {
@@ -80,6 +90,7 @@ fun SecondPart(modifier:Modifier=Modifier){
             modifier = Modifier.padding(5.dp) // Use Modifier here for Text
         )
         Divider(
+            color=Color.DarkGray,
             thickness = 3.dp,
             modifier = Modifier.fillMaxWidth(0.4f) // Use Modifier here for Divider
         )
