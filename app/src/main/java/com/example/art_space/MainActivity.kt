@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+
+
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -33,29 +35,37 @@ class MainActivity : ComponentActivity() {
 }
 @Composable
 fun LayoutBasic(modifier:Modifier=Modifier){
-    Column(
-        verticalArrangement = Arrangement.Center,
-
-    ) {
-        FirstPart()
-        SecondPart()
-        ThirdPart()
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    )
+    {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            FirstPart()
+            SecondPart()
+            ThirdPart()
+        }
     }
 }
 @Composable
 fun FirstPart(modifier:Modifier=Modifier){
-    Image(painter = painterResource(id = R.drawable.trial_image),
-        contentDescription ="",
-        modifier = Modifier
-            .padding(10.dp)
-            .size(300.dp,350.dp)
-            .clip(RoundedCornerShape(20.dp))
-            .shadow(
-                elevation = 8.dp,
-                shape = RoundedCornerShape(20.dp)
-            ),
-        contentScale = ContentScale.Crop
+        Image(
+            painter = painterResource(id = R.drawable.trial_image),
+            contentDescription = "",
+            modifier = Modifier
+                .padding(top = 10.dp)
+                .size(300.dp, 350.dp)
+                .clip(RoundedCornerShape(20.dp))
+                .shadow(
+                    elevation = 8.dp,
+                    shape = RoundedCornerShape(20.dp)
+                ),
+            contentScale = ContentScale.Crop
         )
+
 }
 
 @Composable
