@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Art_Space</string>
-    <string name="Artist1">Artist Name</string>
-    <string name="title">Title Name</string>
-    <string name="year">Year</string>
+    <string name="Artist1">Dirt Bike</string>
+    <string name="Artist2">Surf Board</string>
+    <string name="Artist3">Random Girl</string>
+    <string name="title1">Bike</string>
+    <string name="title2">Surf</string>
+    <string name="title3">Girl</string>
+    <string name="year1">2021</string>
+    <string name="year2">2022</string>
+    <string name="year3">2023</string>
+
     <string name="previous">Previous</string>
     <string name="next">Next</string>
 </resources>
